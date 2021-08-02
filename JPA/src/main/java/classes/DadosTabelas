@@ -1,0 +1,24 @@
+1 - Criar a tabela Estado no banco de dados:
+CREATE TABLE Estado (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(80) NOT NULL,
+    sigla VARCHAR(2) NOT NULL
+);
+
+2 - Adicionar alunos na tabela:
+INSERT INTO Estado(nome, sigla) VALUES ('Rio de Janeiro', 'RJ');
+INSERT INTO Estado(nome, sigla) VALUES ('Sao Paulo', 'SP');
+
+
+3 - Criar a tabela Aluno no banco de dados:
+CREATE TABLE Aluno (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(80) NOT NULL,
+    idade INTEGER NOT NULL,
+    estado_id INTEGER NOT NULL
+);
+
+4 - Adicionar alunos na tabela:
+INSERT INTO Aluno(nome, idade, estado_id) VALUES ('Daniel', '29', 1);
+INSERT INTO Aluno(nome, idade, estado_id) VALUES ('Joao', '20', 1);
+INSERT INTO Aluno(nome, idade, estado_id) VALUES ('Pedro', '30', 1);

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+
+
+    <!--PART 1-->
+
+    <!-- Unidade de persistência sem implementações (Somente JPA)-->
+        <persistence-unit name="part1-DIO">
+
+            <description> Unidade de persistência sem implementações (Somente JPA) </description>
+
+            <class>classes.Aluno</class>
+            <class>classes.Estado</class>
+
+            <!-- Configurações de conexão ao banco de dados -->
+            <properties>
+                <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/digital_innovation_one" />
+                <property name="javax.persistence.jdbc.user" value="root" />
+                <property name="javax.persistence.jdbc.password" value="9707" />
+                <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            </properties>
+
+        </persistence-unit>
+
+
+    <!--                                            HIBERNATE                                         -->
+    <!--
+
+        <persistence-unit name="part1-DIO">
+
+            <description> Unidade de persistência JPA com Hibernate </description>
+
+            <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+            <class>classes.Aluno</class>
+            <class>classes.Estado</class>
+
+            &lt;!&ndash; Configurações de conexão ao banco de dados &ndash;&gt;
+            <properties>
+                <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/digital_innovation_one" />
+                <property name="javax.persistence.jdbc.user" value="root" />
+                <property name="javax.persistence.jdbc.password" value="9707" />
+                <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+
+                &lt;!&ndash; Configurações do Hibernate&ndash;&gt;
+                <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+                <property name="hibernate.show_sql" value="true" />
+                <property name="hibernate.format_sql" value="true" />
+                <property name="hibernate.hbm2ddl.auto" value="create" />
+            </properties>
+
+        </persistence-unit>
+    -->
+
+    <!--                                       ECLIPSE                                                             -->
+
+    <!--
+      <persistence-unit name="part1-DIO">
+
+          <description> Unidade de persistência JPA com Eclipse </description>
+
+          <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+          <class>classes.Aluno</class>
+          <class>classes.Estado</class>
+
+          &lt;!&ndash; Configurações de conexão ao banco de dados &ndash;&gt;
+          <properties>
+              <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/digital_innovation_one" />
+              <property name="javax.persistence.jdbc.user" value="root" />
+              <property name="javax.persistence.jdbc.password" value="9707" />
+              <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+
+              &lt;!&ndash; Configuracoes do EclipseLink &ndash;&gt;
+              <property name="eclipselink.target-database" value="MySQL"/>
+              <property name="eclipselink.logging.level.sql" value="FINE" />
+              <property name="eclipselink.logging.parameters" value="true"/>
+              <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+          </properties>
+
+      </persistence-unit>-->
+
+    <!-- ==========================================================================================================================  -->
+
+    <!-- Unidade de persistência com implementação Hibernate -->
+    <persistence-unit name="part2-DIO">
+
+
+
+        <description> Unidade de persistência com implementação Hibernate e Eclipse </description>
+        <!-- Implementação do JPA -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+
+
+        <class>classes.Aluno</class>
+        <class>classes.Estado</class>
+
+
+        <!-- Configurações de conexão ao banco de dados e do Hibernate -->
+        <properties>
+            <!-- Configurações do banco de dados -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/digital_innovation_one" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="9707" />
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+
+            <!-- Configurações do Hibernate-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+
+            <!-- Configuracoes do EclipseLink -->
+            <property name="eclipselink.target-database" value="MySQL"/>
+            <property name="eclipselink.logging.level.sql" value="FINE" />
+            <property name="eclipselink.logging.parameters" value="true"/>
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+
+        </properties>
+
+
+    </persistence-unit>
+
+</persistence>
